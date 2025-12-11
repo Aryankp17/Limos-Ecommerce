@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hori-line{
+    width: 100%;
+    height: 1.5px;
+    position: sticky;
+    background-color: rgb(54, 54, 54);
+
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+/* left section */
+.left{
+    width: 20%;
+    height: 80vh;
+    margin: 15px auto;
+    /* background-color: brown; */
+    padding: 15px 10px;
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.links a:hover{
+    color: black;
+}
+.links a{
+    text-decoration: none;
+    color: rgb(82, 82, 82);
+}
+.links{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+.filter a:hover{
+    color: black;
+}
+.filter a{
+    text-decoration: none;
+    color: rgb(82, 82, 82);
+    font-size: 14px;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+
+
+/* right section */
+.right{
+    width: 80% ;
+    /* background-color: rgb(50, 48, 47); */
+    height: 80vh;
+    margin: 30px auto 10px auto;
+    padding: 10px;
+    display: grid;
+    border: none;
+    border-left: 1px solid rgb(74, 74, 74);
+    row-gap: 50%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+
+}
+
+
+.box{
+    width: 150px;
+    aspect-ratio: 1/1.5;
+    /* background-color: bisque; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+#box-img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center center;
+}
+#wishlist-img:hover{
+    transform: scale(1.06);
+    transition: all 0.2s ease-in-out;
+    filter: invert(1);
+}
+#wishlist-img{
+    position: absolute;
+    /* transform: translateX(); */
+    right: 10px;
+    top: 10px;
+
+}
+
+#add-img:hover{
+    transform: scale(1.06);
+    transition: all 0.2s ease-in-out;
+
+}
+.box:hover{
+    transform: scale(1.01);
+    transition: all 0.1s ease-in-out;
+
+}
+.box:hover #add-img{
+    display: flex;
+}
+#add-img{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    bottom: 20px;
+    right: 10px;
+    background-color: whitesmoke;
+    padding: 2px;
+    border:none;
+    border-radius: 50%;
+}
+
+.img-info h4{
+   font-size: clamp(8px, 12px, 18px);
+}
+.img-info h5{
+   color: rgb(255, 255, 255);
+}
+.img-info{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(158, 158, 158);
+}
+
+
+/* admin page */
+
+.pages a:hover{
+    color: black;
+}
+.pages a{
+    color:rgb(82, 82, 82);
+    text-decoration: none;
+}
+.pages{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+
+}
+#delete-product{
+    position: absolute;
+    /* transform: translateX(); */
+    right: 10px;
+    top: 10px;
+    filter: invert(29%) sepia(91%) saturate(7473%) hue-rotate(358deg) brightness(97%) contrast(107%);
+
+}
+#delete-product:hover{
+    transform: scale(1.06);
+    transition: all 0.2s ease-in-out;
+    filter: invert(1);
+    
+}
+#edit-img:hover{
+    transform: scale(1.06);
+    transition: all 0.2s ease-in-out;
+
+}
+#edit-img{
+    position: absolute;
+    z-index: 1;
+    bottom: 20px;
+    right: 10px;
+    background-color: whitesmoke;
+    padding: 2px;
+    border:none;
+    border-radius: 50%;
+}
+
+
+/* admin */
+.admin-title a:hover{
+    color: rgb(237, 58, 58);
+}
+.admin-title a{
+    text-decoration: none;
+    color: rgb(255, 6, 6);
+    font-size: 14px;
+    margin-left: 20px;
+}
+.admin-title{
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(8, 8, 8);
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    /* background-color: red; */
+}

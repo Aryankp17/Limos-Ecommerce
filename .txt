@@ -1,0 +1,15 @@
+user-model
+
+full name
+email
+password
+cart
+order
+wishlist
+profiilepic
+isadmin
+
+product
+name
+price
+discount

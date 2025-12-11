@@ -1,0 +1,48 @@
+
+<%- include('./partials/header2') %>
+
+<%- include('./partials/aside-left') %>
+
+<link rel="stylesheet" href="/public/stylesheets/create-product.css">
+
+
+<section class="right-section">
+    <h1>Create New product</h1>
+    <div class="vert-line"></div>
+    <div class="product-details">
+        <h2>Product details</h2>
+        <form action="/product/create" method="post" enctype="multipart/form-data">
+            <div class="file-upload">
+                <h3>Product Image</h3>
+                <label for="file-upload" class="upload">Select<input name="image" id="file-upload" hidden type="file"></label>
+            
+            </div>
+            
+            <input type="text" name="name" placeholder="Product Name">
+            <div class="price-section">
+                <input type="number" name="price" placeholder="Product Price">
+                <input type="number" name="discount" value="0" placeholder="Discount-price">
+            </div>
+            <div class="panel-detail">
+
+                <div class="back-color">
+                    <span>Background-Color :</span>
+                    <label for="background-color">Select<input id="background-color" hidden type="color" value="#E4E4E4" name="backgroundcolor" ></label>
+                </div>
+                <div class="panel-color">
+                    <span>Panel-Color :</span>
+                    <label for="panel-color">Select<input id="panel-color" hidden type="color" value="#9E9E9E" name="panelcolor" ></label>
+                </div>
+                <div class="text-color">
+                    <span>Text-Color :</span>
+                    <label for="text-color">Select<input id="text-color" hidden type="color" value="#000000" name="textcolor" ></label>
+                </div>
+
+            </div>
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</section>
+
+
+<%- include('./partials/footer') %>

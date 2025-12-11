@@ -1,0 +1,20 @@
+
+<link rel="stylesheet" href="/public/stylesheets/nav.css">
+
+<div class="flash-msg <%= message ? "show" : "" %>">
+    <h4 style="background-color: <%= color %>;"><%= message %></h4>
+</div>
+
+<script>
+    setTimeout(() => {
+        const flash = document.querySelector('.flash-msg');
+        if(flash){
+            
+            flash.classList.add('fade-out');
+            setTimeout(() => {
+                flash.remove();
+            }, 500);
+        }
+        
+    },3000);
+</script>

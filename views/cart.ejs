@@ -1,0 +1,60 @@
+
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="/public/stylesheets/cart.css">
+ <div class="hori-line"></div>
+<% if(user.cart.length===0){ %>
+    <h2 class="empty-cart">Your Cart is Empty</h2>
+<% } %>
+<% carts.forEach(function(cart){ %> 
+     <div class="cart-info">
+    <div class="product-info">
+        <div class="img">
+            <img id="cart-img" src="data:image/jpeg;base64,<%= cart.product.image.toString('base64') %>" alt="">
+        </div>
+        <div class="product-detail">
+            <h2><%= cart.product.name %></h2>
+            <div class="quantitiy">
+                <a href="/user/cart/quantity/add/<%= cart.product._id %>"><img src="/public/images/icon/add.svg" alt=""></a>
+                <span><%= cart.quantity %></span>
+                <a href="/user/cart/quantity/remove/<%= cart.product._id %>"><img src="/public/images/icon/minus.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="product-price">
+            <h5>Net Total</h5>
+            <h4>₹ <%= cart.product.price %></h4>
+        </div>
+    </div>
+    <div class="product-price-info">
+        <div class="price-breakdown">
+            <h3>Price Breakdown</h3>
+            <div class="price-down">
+                <div class="total-mrp">
+                    <span>Total MRP</span>
+                    <span>₹ <%= cart.product.price %></span>
+                </div>
+                <div class="mrp-discount">
+                    <span>Discount on MRP</span>
+                    <span>₹ <%= cart.product.discount %></span>
+                </div>
+                <div class="platform-fees">
+                    <span>Platform Fee</span>
+                    <span>₹ 20</span>
+                </div>
+                <div class="shipping-fees">
+                    <span>Shipping Fees</span>
+                    <span>₹ FREE</span>
+                </div>
+            </div>
+        </div>
+        <div class="hori-line"></div>
+        <div class="total-price">
+            <span>Total</span>
+            <span>₹ <%= cart.quantity*cart.product.price - (cart.product.discount) + 20 %></span>
+        </div>
+        <button><a href="">Place Order</a></button>
+    </div>
+ </div>
+<% }) %>
+
+<%- include('./partials/footer') %>
+

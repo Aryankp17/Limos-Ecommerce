@@ -1,0 +1,57 @@
+
+<%- include('./partials/header') %>
+<link rel="stylesheet" href="/public/stylesheets/home.css">
+
+<% if(success.length >0){ %>
+     <%- include('./partials/flash-msg',{color:'blue', message:success}) %>
+<% } %>
+
+
+ <div class="hori-line"></div>
+
+ <section class="left">
+    <div class="sort">
+        <label for="sortby">Sort by :</label>
+        <select name="sortby" id="sortby">
+            <option value="">Popular</option>
+            <option value="">Low to High</option>
+            <option value="">High to Low</option>
+        </select>
+        <div class="links">
+            <a href="">New Collection</a>
+            <a href="">All Products</a>
+            <a href="">Discounted Products</a>
+        </div>
+    </div>
+    <div class="filter">
+        <span>Filter by:</span>
+        <a href="">Availability</a>
+        <a href="">Discount</a>
+    </div>
+ </section>
+ <div class="vert-line"></div>
+ <section class="right">
+    <% if(products){ %>
+        <% products.forEach(function(product){  %>
+            <div class="box">
+                <a href="/user/wishlist/<%= product._id %>"><img id="wishlist-img" src="/public/images/icon/wishlist.svg" alt=""></a>
+                <img style="background-color: <%= product.backgroundcolor%>" id="box-img" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+                <div class="img-info" style="background-color: <%= product.panelcolor%> ">
+                    <h4><%= product.name %></h4>
+                    <h5>₹ <%=  product.price %></h5>
+                </div>
+                <a href="/user/cart/<%= product._id%>">
+                    <% if(user.cart.findIndex(i=>i.product.toString() === product._id.toString()) === -1){ %>
+                         <img id="add-img" src="/public/images/icon/add.svg" alt="">
+                    <% }else{ %>
+                        <img id="add-img" src="/public/images/icon/minus.svg" alt="">
+                    <% } %>
+                </a>
+            </div>
+        <% }) %>
+    <% } %>
+
+ </section>
+
+
+<%- include('partials/footer') %>

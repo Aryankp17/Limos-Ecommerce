@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav{
+    width: 100%;
+    height: 10vh;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0;
+}
+.logo img{
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    /* background-color: aqua; */
+    position: absolute;
+    top: -70%;
+    left: -10%;
+}
+.logo{
+    /* background-color: brown; */
+    width: 10%;
+    object-fit: cover;
+    cursor: pointer;
+    position: relative;
+}
+.nav-info a:hover{
+    transform: scale(1.04);
+}
+
+.nav-info img:hover{
+    transform: scale(1.04);
+    cursor: pointer;
+}
+#profile-section{
+    width: 30px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.nav-info a{
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    font-weight: 600;
+    font-size: 15px;
+}
+.nav-info a img{
+    width: 20px;
+    align-self: end;
+    display: flex;
+}
+.nav-info{
+    display: flex;
+    /* background-color: blueviolet; */
+    gap: 1em;
+    align-items: center;
+}
+.profile-dropdown{
+    position: absolute;
+    top: 55px;
+    z-index: 10;
+    right: 2px;
+    width: 15vw;
+    display: none;
+    transition: all 0.1s ease-in-out;
+    aspect-ratio: 1/1;
+    background-color: rgb(193, 193, 193);
+    border-radius: 8px;
+}
+.dropdown-content a:hover{
+    color: rgb(0, 140, 255);
+    transform: scale(1.01);
+    text-decoration: underline;
+}
+.dropdown-content a{
+    text-decoration: none;
+    text-align: justify;
+    font-family: 'poppins','sans-sarif';
+    font-weight: 600;
+    color: black;
+}
+.dropdown-content{
+    padding: 15px 10px;
+    /* background-color: black; */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+
+/* flash message */
+.flash-msg{
+    border: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 7%;
+    outline: none;
+    justify-content: center;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    transform: translateY(-120%);
+    transition: all 0.2s ease-in-out;
+}
+.flash-msg.show{
+    transform: translateY(0);
+}
+.flash-msg h4{
+    padding: 8px 8px;
+    color: white;
+    /* background-color: rgb(235, 51, 51); */
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    border-radius: 8px;
+
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}

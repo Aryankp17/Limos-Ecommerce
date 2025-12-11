@@ -1,0 +1,37 @@
+<%- include('./partials/header2')%>
+
+<% if(success.length >0){ %>
+     <%- include('./partials/flash-msg',{color:'blue', message:success}) %>
+<% } %>
+
+<%- include('./partials/aside-left') %>
+
+
+
+<link rel="stylesheet" href="/public/stylesheets/home.css">
+
+<div class="vert-line"></div>
+    <div class="admin-title">
+        <h3>Admin Panel</h3>
+        <a href="/owner/deleteall">Delete all</a>
+    </div>
+<section class="right">
+    
+    <% if(products){ %>
+        <% products.forEach(function(product){ %>
+            <div class="box"> 
+                <a href="/owner/deleteproduct/<%= product._id %>"><img id="delete-product" src="/public/images/icon/delete.svg" alt=""></a>
+                <img style="background-color: <%= product.backgroundcolor%>" id="box-img" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+                <div class="img-info" style="background-color: <%= product.panelcolor%> ">
+                    <h4><%= product.name %></h4>
+                    <h5>₹ <%=  product.price %></h5>
+                </div>
+                <a href="/owner/editproduct/<%= product._id%>"><img id="edit-img" src="/public/images/icon/edit.svg" alt=""></a>
+            </div>
+        <% }) %>
+    <% } %>
+    
+
+</section>
+
+<%- include('./partials/footer')%>
