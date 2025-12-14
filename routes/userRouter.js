@@ -36,10 +36,6 @@ router.post('/profileupdate',upload.single('profilepic'),isloggedin,profileupdat
 router.get('/cart',isloggedin,async (req,res)=>{
     const user = await userModel.findOne({_id:req.user.userid}).populate({path:'cart.product'})
     const carts = user.cart
-    carts.forEach((item)=>{
-        console.log(item.quantity * item.product.price);
-
-    })
     res.render('cart',{user,carts})
 })
 

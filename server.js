@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 dotenv.config();
 import express from 'express';
-import mongoose from './config/mongoose-connection.js';
+import './config/mongoose-connection.js';
 import UserRouter from './routes/userRouter.js';
 import OwnerRouter from './routes/ownerRouter.js';
 import ProductRouter from './routes/productRouter.js';
@@ -10,8 +10,7 @@ import cookie from 'cookie-parser';
 import session from 'express-session';
 import flash from 'connect-flash';
 
-const app = express()
-const port = 3000 
+const app = express() 
 app.set('view engine', 'ejs');
 app.use(cookie());
 
@@ -32,7 +31,7 @@ app.use('/',IndexRouter)
 app.use('/User',UserRouter)
 app.use('/Owner',OwnerRouter)
 app.use('/Product',ProductRouter)
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`)
 })
