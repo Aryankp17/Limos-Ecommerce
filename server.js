@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 dotenv.config();
 import express from 'express';
+import './config/mongoose-connection.js';
 import UserRouter from './routes/userRouter.js';
 import OwnerRouter from './routes/ownerRouter.js';
 import ProductRouter from './routes/productRouter.js';
